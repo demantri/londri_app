@@ -84,8 +84,8 @@
 			'jurnal' => $jurnal,
 			'bb' => $bb,
 		];
-		$this->db->update('role', $data);
 		$this->db->where('id', $id);
+		$this->db->update('role', $data);
 		redirect('user/role');
 	}
 
@@ -97,7 +97,6 @@
 		$this->db->where('id', $id);
 		$this->db->update('role', $data);
 		redirect('user/role');
-		// print_r($id);
 	}
 }
 ?>

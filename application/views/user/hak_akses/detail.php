@@ -23,37 +23,37 @@
 								</td>
 							</tr>
 							<tr>
-								<td>Update</td>
+								<td><label for="update">Update</label></td>
 								<td>
 									<input type="checkbox"<?= ($value->update == 1 ? 'checked' : '') ?> name="update" id="update" value="">
 								</td>
 							</tr>
 							<tr>
-								<td>Delete</td>
+								<td><label for="delete">Delete</label></td>
 								<td>
 									<input type="checkbox"<?= ($value->delete == 1 ? 'checked' : '') ?> name="delete" id="delete" value="">
 								</td>
 							</tr>
 							<tr>
-								<td>Modul Transaksi</td>
+								<td><label for="modul_transaksi">Modul Transaksi</label></td>
 								<td>
 									<input type="checkbox"<?= ($value->modul_transaksi == 1 ? 'checked' : '') ?> name="modul_transaksi" id="modul_transaksi" value="">
 								</td>
 							</tr>
 							<tr>
-								<td>Laporan Pendapatan</td>
+								<td><label for="laporan_pendapatan">Laporan Pendapatan</label></td>
 								<td>
 									<input type="checkbox"<?= ($value->laporan_pendapatan == 1 ? 'checked' : '') ?> name="laporan_pendapatan" id="laporan_pendapatan" value="">
 								</td>
 							</tr>
 							<tr>
-								<td>Jurnal Umum</td>
+								<td><label for="jurnal">Jurnal Umum</label></td>
 								<td>
 									<input type="checkbox"<?= ($value->jurnal == 1 ? 'checked' : '') ?> name="jurnal" id="jurnal" value="">
 								</td>
 							</tr>
 							<tr>
-								<td>Buku Besar</td>
+								<td><label for="bb">Buku Besar</label></td>
 								<td>
 									<input type="checkbox"<?= ($value->bb == 1 ? 'checked' : '') ?> name="bb" id="bb" value="">
 								</td>

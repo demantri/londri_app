@@ -29,37 +29,37 @@
 								</td>
 							</tr>
 							<tr>
-								<td><label for="create">Update</label></td>
+								<td><label for="update">Update</label></td>
 								<td>
 									<input type="checkbox" name="update" id="update" value="">
 								</td>
 							</tr>
 							<tr>
-								<td><label for="create">Delete</label></td>
+								<td><label for="delete">Delete</label></td>
 								<td>
 									<input type="checkbox" name="delete" id="delete" value="">
 								</td>
 							</tr>
 							<tr>
-								<td><label for="create">Modul Transaksi</label></td>
+								<td><label for="modul_transaksi">Modul Transaksi</label></td>
 								<td>
 									<input type="checkbox" name="modul_transaksi" id="modul_transaksi" value="">
 								</td>
 							</tr>
 							<tr>
-								<td><label for="create">Laporan Pendapatan</label></td>
+								<td><label for="laporan_pendapatan">Laporan Pendapatan</label></td>
 								<td>
 									<input type="checkbox" name="laporan_pendapatan" id="laporan_pendapatan" value="">
 								</td>
 							</tr>
 							<tr>
-								<td><label for="create">Jurnal Umum</label></td>
+								<td><label for="jurnal">Jurnal Umum</label></td>
 								<td>
 									<input type="checkbox" name="jurnal" id="jurnal" value="">
 								</td>
 							</tr>
 							<tr>
-								<td><label for="create">Buku Besar</label></td>
+								<td><label for="bb">Buku Besar</label></td>
 								<td>
 									<input type="checkbox" name="bb" id="bb" value="">
 								</td>
