@@ -13,13 +13,12 @@
 </div>
 
 <div class="row mb-3">
-	<!-- Invoice Example -->
-	<div class="col-xl-12 col-lg-7 mb-4">
+	<div class="col-xl-12 col-lg-12 mb-4">
 		<div class="card">
 			<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 				<h6 class="m-0 font-weight-bold text-primary">List Produk</h6>
 				<a class="m-0 float-right">
-					<button class="btn btn-primary rounded-0" data-toggle="modal" data-target="#add_user">Tambah</button>
+					<button class="btn btn-primary rounded-0" data-toggle="modal" data-target="#add">Tambah</button>
 				</a>
 			</div>
 			
@@ -37,12 +36,13 @@
 					<tbody>
 					<?php 
 					$no = 1; 
-					foreach ($role as $key => $value) { ?>
+					foreach ($list as $key => $value) { ?>
 						<tr>
 							<td><?= $no++ ?></td>
 							<td><?= ucwords($value->deskripsi) ?></td>
 							<td>
 								<a href="#detail_<?= $value->id ?>" data-toggle="modal" class="btn btn-light btn-sm rounded-0">Detail</a>
+								<a href="<?= base_url('user/delete_role/'.$value->id )?>" onclick="return confirm('Data yang ingin dihapus tidak dapat dikembalikan, anda yakin?')" class="btn btn-danger btn-sm rounded-0">Delete</a>
 							</td>
 						</tr>
 					<?php } ?>
@@ -53,7 +53,7 @@
 		</div>
 	</div>
 </div>
-<?php $this->load->view('user/add_user');?>
+<?php $this->load->view('user/hak_akses/add');?>
 <?php $this->load->view('user/hak_akses/detail');?>
 <script>
 	$(document).ready(function() {

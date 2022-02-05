@@ -14,7 +14,7 @@
 
 <div class="row mb-3">
 	<!-- Invoice Example -->
-	<div class="col-xl-12 col-lg-7 mb-4">
+	<div class="col-xl-12 col-lg-12 mb-4">
 		<div class="card">
 			<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 				<h6 class="m-0 font-weight-bold text-primary">List Produk</h6>
@@ -33,7 +33,6 @@
 							<th>Username</th>
 							<th>Email</th>
 							<th>Password</th>
-							<th>Role</th>
 							<th>Created at</th>
 							<th>Action</th>
 						</tr>
@@ -47,7 +46,6 @@
 							<td><?= $value->username ?></td>
 							<td><?= $value->email ?></td>
 							<td><?= substr($value->password, 0, 20).'...' ?></td>
-							<td><?= $value->email ?></td>
 							<td><?= $value->created_at ?></td>
 							<td><?= $value->username ?></td>
 						</tr>

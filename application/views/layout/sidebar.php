@@ -56,8 +56,8 @@
 		</a>
 		<div id="user-toggle" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
-				<a class="collapse-item" href="<?= base_url('user')?>">List User</a>
-				<a class="collapse-item" href="<?= base_url('user/hak-akses')?>">Hak Akses</a>
+				<a class="collapse-item" href="<?= base_url('user')?>">User</a>
+				<a class="collapse-item" href="<?= base_url('user/role')?>">Role</a>
 			</div>
 		</div>
 	</li>

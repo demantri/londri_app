@@ -9,7 +9,7 @@
 			</div>
 			<form action="<?= base_url('user/save_user')?>" method="POST">
 				<div class="modal-body">
-					<input type="hidden" name="id" id="id">
+					<!-- <input type="hidden" name="id" id="id"> -->
 					<div class="form-group row">
 						<label for="username" class="col-sm-3">Username</label>
 						<div class="col-sm-9">

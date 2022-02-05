@@ -3,7 +3,7 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Detail Role</h5>
+				<h5 class="modal-title">Hak Akses</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 				</button>
@@ -15,45 +15,47 @@
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<td>Create</td>
 								<td>
-									<input type="checkbox"<?= ($value->create == 1 ? 'checked' : '') ?> value="" name="checkbox[]">
+									<label for="create">Create</label>
+								</td>
+								<td>
+									<input type="checkbox"<?= ($value->create == 1 ? 'checked' : '') ?> name="create" id="create" value="">
 								</td>
 							</tr>
 							<tr>
 								<td>Update</td>
 								<td>
-									<input type="checkbox"<?= ($value->update == 1 ? 'checked' : '') ?> value="" name="create">
+									<input type="checkbox"<?= ($value->update == 1 ? 'checked' : '') ?> name="update" id="update" value="">
 								</td>
 							</tr>
 							<tr>
 								<td>Delete</td>
 								<td>
-									<input type="checkbox"<?= ($value->delete == 1 ? 'checked' : '') ?> value="" name="checkbox[]">
+									<input type="checkbox"<?= ($value->delete == 1 ? 'checked' : '') ?> name="delete" id="delete" value="">
 								</td>
 							</tr>
 							<tr>
 								<td>Modul Transaksi</td>
 								<td>
-									<input type="checkbox"<?= ($value->modul_transaksi == 1 ? 'checked' : '') ?> value="" name="checkbox[]">
+									<input type="checkbox"<?= ($value->modul_transaksi == 1 ? 'checked' : '') ?> name="modul_transaksi" id="modul_transaksi" value="">
 								</td>
 							</tr>
 							<tr>
 								<td>Laporan Pendapatan</td>
 								<td>
-									<input type="checkbox"<?= ($value->laporan_pendapatan == 1 ? 'checked' : '') ?> value="" name="checkbox[]">
+									<input type="checkbox"<?= ($value->laporan_pendapatan == 1 ? 'checked' : '') ?> name="laporan_pendapatan" id="laporan_pendapatan" value="">
 								</td>
 							</tr>
 							<tr>
 								<td>Jurnal Umum</td>
 								<td>
-									<input type="checkbox"<?= ($value->jurnal == 1 ? 'checked' : '') ?> value="" name="checkbox[]">
+									<input type="checkbox"<?= ($value->jurnal == 1 ? 'checked' : '') ?> name="jurnal" id="jurnal" value="">
 								</td>
 							</tr>
 							<tr>
 								<td>Buku Besar</td>
 								<td>
-									<input type="checkbox"<?= ($value->bb == 1 ? 'checked' : '') ?> value="" name="asd">
+									<input type="checkbox"<?= ($value->bb == 1 ? 'checked' : '') ?> name="bb" id="bb" value="">
 								</td>
 							</tr>
 						</thead>
@@ -67,4 +69,15 @@
 		</div>
 	</div>
 </div>
+<script>
+	$('#create, #update, #delete, #modul_transaksi, #laporan_pendapatan, #jurnal, #bb').on("click", function() {
+		$("#create").prop('checked') ? $("#create").val(1) : ''
+		$("#update").prop('checked') ? $("#update").val(1) : ''
+		$("#delete").prop('checked') ? $("#delete").val(1) : ''
+		$("#modul_transaksi").prop('checked') ? $("#modul_transaksi").val(1) : ''
+		$("#laporan_pendapatan").prop('checked') ? $("#laporan_pendapatan").val(1) : ''
+		$("#jurnal").prop('checked') ? $("#jurnal").val(1) : ''
+		$("#bb").prop('checked') ? $("#bb").val(1) : ''
+	})
+</script>
 <?php } ?>
