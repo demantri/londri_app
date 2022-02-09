@@ -135,4 +135,5 @@ $autoload['language'] = array();
 $autoload['model'] = array(
 	'Pelanggan_model',
 	'Londri_model',
+	'Transaksi_model'
 );
