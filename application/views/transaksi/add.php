@@ -119,20 +119,16 @@
 						</div>
 					</div>
 				</div>
-				<div class="form-group row" id="non_member">
-					<label for="pelanggan_non_member" class="col-sm-3">Nama Pelanggan</label>
+				<div class="form-group row">
+					<label for="nama_pelanggan" class="col-sm-3">Nama Pelanggan</label>
 					<div class="col-sm-9">
-					<input type="text" name="nama_pelanggan" class="form-control" id="pelanggan_non_member" placeholder="Nama Pelanggan">
-					</div>
-				</div>
-				<div class="form-group row" id="member">
-					<label for="pelanggan_member" class="col-sm-3">Nama Pelanggan</label>
-					<div class="col-sm-9">
-						<select name="nama_pelanggan" id="pelanggan_member" class="form-control">
-							<?php foreach ($pelanggan as $pel) { ?>
-							<option value=""></option>
-							<?php } ?>
-						</select>
+					<input type="text" value="0" class="nama_pelanggan">
+					<select name="nama_pelanggan" id="nama_pelanggan" class="form-control">
+					<option value="">- pilih pelanggan -</option>
+					<?php foreach ($pelanggan as $pel) { ?>
+					<option value=""><?= $pel->nama ?></option>
+					<?php } ?>
+					</select>
 					</div>
 				</div>
 			</div>
@@ -157,7 +153,7 @@
 						$("#show_paket").show()
 						$("#after_paket").show()
 						var html = "";
-						html = "<span>paket perkilo adalah " + obj.harga_paket+ " </span>"
+						html = "<span>*paket perkilo adalah " + obj.harga_paket+ " </span>"
 						$("#show_paket").html(html)
 
 						// ketik berat 
@@ -179,5 +175,27 @@
 				$("#total").val(0)
 			}
 		})
+
+		$("#cek_member").on('click', function() {
+			check = $("#cek_member").is(":checked")
+			if (check) {
+				$(".nama_pelanggan").val(1)
+			} else {
+				$(".nama_pelanggan").val(0)
+			}
+		})
+
+		// function select_val(value) {
+		// 	$.ajax({
+		// 		url : "<?= base_url('transaksi/c_m/')?>"+value, 
+		// 		method : "post", 
+		// 		data : {
+		// 			value : value
+		// 		}, 
+		// 		success:function(e) {
+		// 			console.log(e)
+		// 		}
+		// 	})
+		// }
 	})
 </script>
