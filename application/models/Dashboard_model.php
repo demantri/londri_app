@@ -37,5 +37,16 @@
 		";
 		return $this->db->query($q);
 	}
+
+	public function best_parfum()
+	{
+		$q = "SELECT a.*, COUNT(b.parfum) AS total
+		FROM parfum a
+		LEFT JOIN detail_transaksi b ON a.nama_parfum = b.parfum
+		GROUP BY nama_parfum
+		ORDER BY total DESC  
+		";
+		return $this->db->query($q);
+	}
 }
 ?>
