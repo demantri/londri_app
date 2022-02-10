@@ -1,10 +1,10 @@
-<!-- <div class="d-sm-flex align-items-center justify-content-between mb-3">
-	<h1 class="h3 mb-0 text-gray-800"></h1>
+<div class="d-sm-flex align-items-center justify-content-between mb-3">
+	<a href="<?= base_url('transaksi')?>" class="btn btn-light rounded-0">Kembali</a>
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item"><a href="./">Transaksi</a></li>
 		<li class="breadcrumb-item active" aria-current="page">Tambah Londri</li>
 	</ol>
-</div> -->
+</div>
 <!-- notif nya -->
 <div class="row mb-3">
 	<div class="col-xl-7 col-lg-7" id="notif">
@@ -57,7 +57,7 @@
 							<div style="color: red; font-size:13px" id="show_paket">
 								
 							</div>
-							<input type="text" id="harga_paket" name="harga_paket">
+							<input type="hidden" id="harga_paket" name="harga_paket">
 							</div>
 						</div>
 						<div class="form-group row" id="after_paket">

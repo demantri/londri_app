@@ -8,7 +8,7 @@
 	</a>
 	<hr class="sidebar-divider my-0">
 	<li class="nav-item">
-		<a class="nav-link" href="index.html">
+		<a class="nav-link" href="<?= base_url('dashboard')?>">
 			<i class="fas fa-fw fa-tachometer-alt"></i>
 			<span>Dashboard</span>
 		</a>
@@ -69,6 +69,12 @@
 	<a class="nav-link" href="<?= base_url('transaksi')?>">
 		<i class="fas fa-fw fa-chart-area"></i>
 		<span>Transaksi Londri</span>
+	</a>
+	</li>
+	<li class="nav-item">
+	<a class="nav-link" href="<?= base_url('transaksi/pembayaran')?>">
+		<i class="fas fa-fw fa-chart-area"></i>
+		<span>Pembayaran Londri</span>
 	</a>
 	</li>
 	<hr class="sidebar-divider">

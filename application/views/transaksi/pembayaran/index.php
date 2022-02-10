@@ -38,22 +38,7 @@
 						</tr>
 					</thead>
 					<tbody>
-					<?php 
-					$no = 1;
-					foreach ($list as $key => $value) { ?>
-						<tr>
-							<td><?= $no++ ?></td>
-							<td><?= $value->tgl_transaksi ?></td>
-							<td><?= $value->pelanggan ?></td>
-							<td><?= format_rp($value->total) ?></td>
-							<td>
-								<?= ($value->status == 'telah melakukan pembayaran') ? '<span class="badge badge-success">'.$value->status.'</span>' : '<span class="badge badge-warning">'.$value->status.'</span>';?>
-							</td>
-							<td class="text-center">
-								<button class="btn btn-sm btn-light rounded-0">Detail</button>
-							</td>
-						</tr>
-					<?php } ?>
+						
 					</tbody>
 				</table>
 			</div>
