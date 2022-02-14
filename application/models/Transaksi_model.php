@@ -44,5 +44,15 @@
 		}
 		return $output;
 	}
+
+	public function list_pembayaran()
+	{
+		$q = "SELECT b.*, a.pelanggan, a.tgl_transaksi
+		FROM transaksi a
+		JOIN pembayaran b ON a.invoice = b.no_invoice
+		WHERE status_pembayaran = 'belum lunas'
+		ORDER BY no_invoice DESC ";
+		return $this->db->query($q);
+	}
 }
 ?>

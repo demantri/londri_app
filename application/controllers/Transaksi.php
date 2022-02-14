@@ -156,5 +156,42 @@
 		redirect('transaksi/add');
 
 	}
+
+	public function pembayaran()
+	{
+		$list = $this->Transaksi_model->list_pembayaran()->result();
+		$data = [
+			'list' => $list,
+		];
+		$this->template->load('layout/index', 'transaksi/pembayaran/index', $data);
+	}
+
+	public function pembayaran_kredit()
+	{
+		$invoice = $this->input->post('invoice');
+		$nominal = $this->input->post('nominal');
+		$selisih = $this->input->post('selisih');
+		$kembalian = $this->input->post('kembalian');
+		$total_pembayaran = $this->input->post('total_pembayaran');
+
+		$this->db->where('no_invoice', $invoice);
+		$last_nominal_invoice = $this->db->get('pembayaran')->row()->nominal;
+
+		$data = [
+			'nominal' => $nominal + $last_nominal_invoice,
+			'kembalian' => $kembalian,
+			'status_pembayaran' => 'lunas'
+		];
+		$this->db->where('no_invoice', $invoice);
+		$this->db->update('pembayaran', $data);
+
+		$trans = [
+			'status' => 'telah melakukan pembayaran',
+		];
+		$this->db->where('invoice', $invoice);
+		$this->db->update('transaksi', $trans);
+
+		redirect('transaksi/pembayaran');
+	}
 }
 ?>
