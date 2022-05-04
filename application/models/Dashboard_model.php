@@ -40,9 +40,11 @@
 
 	public function best_parfum()
 	{
-		$q = "SELECT a.*, COUNT(b.parfum) AS total
+		$q = "SELECT a.*, COUNT(b.parfum) AS total, c.tgl_transaksi
 		FROM parfum a
 		LEFT JOIN detail_transaksi b ON a.nama_parfum = b.parfum
+		LEFT JOIN transaksi c ON b.invoice = c.invoice
+		-- WHERE LEFT(tgl_transaksi, 7) = left(SYSDATE(), 7)
 		GROUP BY nama_parfum
 		ORDER BY total DESC  
 		";

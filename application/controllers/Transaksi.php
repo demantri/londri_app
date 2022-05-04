@@ -1,5 +1,12 @@
 <?php class Transaksi extends CI_Controller
 {
+	function __construct() {
+        parent::__construct();
+        if (!$this->session->userdata('status')) {
+            redirect('login');
+        }
+    }
+	
 	public function index()
 	{
 		$list = $this->db->get('transaksi')->result();

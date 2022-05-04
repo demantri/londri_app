@@ -1,9 +1,17 @@
 <?php class User extends CI_Controller
 {
+	function __construct() {
+        parent::__construct();
+        if (!$this->session->userdata('status')) {
+            redirect('login');
+        }
+    }
+	 
 	public function index()
 	{
 		$role = $this->db->get('role')->result();
-		$user = $this->db->get('user')->result();
+		$user = $this->User_model->getUser()->result();
+		// $user = $this->db->get('user')->result();
 		$data = [
 			'role' => $role,
 			'user' => $user,
@@ -21,11 +29,13 @@
 		$data = [
 			'username' => $username, 
 			'email' => $email, 
-			'password' => $password, 
-			'role' => $role, 
+			'password' => md5($password), 
+			'role_id' => $role, 
 		];
 
-		print_r($data);exit;
+		$this->db->insert('user', $data);
+
+		redirect('user');
 	}
 
 	public function role()

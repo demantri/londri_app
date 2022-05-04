@@ -137,4 +137,7 @@ $autoload['model'] = array(
 	'Londri_model',
 	'Transaksi_model', 
 	'Dashboard_model',
+	'Login_model',
+	'Member_model', 
+	'User_model',
 );

@@ -31,8 +31,8 @@
 		</a>
 		<div id="member-toggle" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
-				<a class="collapse-item" href="login.html">List Member</a>
-				<a class="collapse-item" href="register.html">Daftar Member</a>
+				<a class="collapse-item" href="<?= base_url('Member')?>">List Member</a>
+				<a class="collapse-item" onclick="return alert('sedang proses')">Daftar Member</a>
 			</div>
 		</div>
 	</li>

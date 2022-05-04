@@ -1,10 +1,20 @@
 <?php class Pelanggan extends CI_Controller
 {
+	function __construct() {
+        parent::__construct();
+        if (!$this->session->userdata('status')) {
+            redirect('login');
+        }
+    }
+	
 	public function index()
 	{
 		$list = $this->Pelanggan_model->get_pelanggan()->result();
+		$jenis_member = $this->db->get('member_detail')->result();
+
 		$data = [
 			'list' => $list,
+			'jenis_member' => $jenis_member
 		];
 		$this->template->load('layout/index', 'pelanggan/index', $data);
 	}

@@ -1,5 +1,12 @@
 <?php class Dashboard extends CI_Controller
 {
+	function __construct() {
+        parent::__construct();
+        if (!$this->session->userdata('status')) {
+            redirect('login');
+        }
+    }
+
 	public function index()
 	{
 		$pendapatan = $this->Dashboard_model->pendapatan()->row()->total;

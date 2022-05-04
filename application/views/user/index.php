@@ -33,6 +33,7 @@
 							<th>Username</th>
 							<th>Email</th>
 							<th>Password</th>
+							<th>Role</th>
 							<th>Created at</th>
 							<th>Action</th>
 						</tr>
@@ -46,6 +47,7 @@
 							<td><?= $value->username ?></td>
 							<td><?= $value->email ?></td>
 							<td><?= substr($value->password, 0, 20).'...' ?></td>
+							<td><?= $value->deskripsi ?></td>
 							<td><?= $value->created_at ?></td>
 							<td><?= $value->username ?></td>
 						</tr>

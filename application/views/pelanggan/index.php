@@ -46,7 +46,7 @@
 							<td><?= $value->nama ?></td>
 							<td><?= $value->alamat ?></td>
 							<td><?= $value->no_telp ?></td>
-							<td><?= $value->jenis_member ? '<span class="badge badge-primary">'.$value->jenis_member.'</span>' : '<span class="badge badge-light">Belum berlangganan member</span>' ?></td>
+							<td><?= $value->jenis_member ? '<span class="badge badge-primary">'.$value->jenis_member.'</span>' : '<span class="badge badge-light daftar" data-id="'.$value->id.'" data-toggle="modal" data-target="#daftar-member" style="cursor:pointer">Belum berlangganan member</span>' ?></td>
 							<td><?= $value->created_at?></td>
 							<td class="text-center">
 								<div class="btn-group" role="group" aria-label="Basic example">
@@ -65,8 +65,14 @@
 	</div>
 </div>
 <?php $this->load->view('pelanggan/add');?>
+<?php $this->load->view('member/daftar_member');?>
 <script>
 	$(document).ready(function() {
 		$("#table").dataTable()
 	})
+
+	$(document).on("click", ".daftar", function () {
+		var id = $(this).data('id');
+		$(".modal-body #id").val( id );
+	});
 </script>

@@ -1,5 +1,11 @@
 <?php class Londri extends CI_Controller
 {
+	function __construct() {
+        parent::__construct();
+        if (!$this->session->userdata('status')) {
+            redirect('login');
+        }
+    }
 	// paket
 	public function index() //list paket
 	{
