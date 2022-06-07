@@ -14,7 +14,8 @@
 	{
 		$month = date('Y-m');
 		$q = "SELECT count(invoice) AS total_transaksi
-		FROM transaksi";
+		FROM transaksi
+		where left(tgl_transaksi, 7) = '$month'";
 		return $this->db->query($q);
 	}
 

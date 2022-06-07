@@ -9,6 +9,7 @@
 	
 	public function index()
 	{
+		$this->db->order_by('tgl_transaksi', 'desc');
 		$list = $this->db->get('transaksi')->result();
 		$data = [
 			'list' => $list,
@@ -58,6 +59,10 @@
 			$nominal = $grandtotal;
 			$status_pembayaran = 'lunas';
 			$status_transaksi = 'telah melakukan pembayaran';
+
+			/** update ke jurnal */
+			$this->Laporan_model->GenerateJurnal($invoice, "transaksi londri", date('Y-m-d'), 'd', $grandtotal, 111);
+			$this->Laporan_model->GenerateJurnal($invoice, "transaksi londri", date('Y-m-d'), 'k', $grandtotal, 411);
 		} else {
 			$selisih = $pmb_kredit - $grandtotal;
 			$nominal = $pmb_kredit;

@@ -140,4 +140,5 @@ $autoload['model'] = array(
 	'Login_model',
 	'Member_model', 
 	'User_model',
+	'Laporan_model',
 );

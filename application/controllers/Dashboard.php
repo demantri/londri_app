@@ -9,7 +9,7 @@
 
 	public function index()
 	{
-		$pendapatan = $this->Dashboard_model->pendapatan()->row()->total;
+		$pendapatan = $this->Dashboard_model->pendapatan()->row()->total ?? 0;
 		$total_transaksi = $this->Dashboard_model->total_transaksi()->row()->total_transaksi;
 		$transaksi_baru = $this->Dashboard_model->transaksi_baru()->row()->transaksi_baru;
 		$member_baru = $this->Dashboard_model->member_baru()->row()->member_baru;
