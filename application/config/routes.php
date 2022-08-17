@@ -11,5 +11,5 @@ $route['user/hak-akses'] = 'user/hak_akses';
 $route['user/daftar-member'] = 'member/daftar';
 
 $route['londri/list-paket'] = 'londri/index';
-$route['londri/list-parfum'] = 'londri/list_parfum';
+$route['londri/list-parfum'] = 'parfum/index';
 
